@@ -16,7 +16,7 @@ WHERE
    validts < $timeMax
   AND validts >= $timeMin
   AND valid
-AND $notifyInterval < validts - last_notify_at 
+AND $notifyInterval < validts - last_notify_at
 LIMIT $limit
 SQL;
     return $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
